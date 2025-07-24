@@ -1,0 +1,2 @@
+{"timestamp":"2025-06-08T09:37:26Z","phone":5550000162,"sender_type":"agent","content":"Hello! Thank you for contacting XYZ Home Services. May I have your name to get started with scheduling your appointment?","actions":[],"status":"active","reason":null,"job_type":null,"urgency":1,"operator_id":null}
+{"timestamp":"2025-06-08T09:37:30Z","phone":5550000162,"sender_type":"customer","content":"STOP","actions":[],"status":"do_not_contact","reason":"Customer requested to stop contact","job_type":null,"urgency":1,"operator_id":null}

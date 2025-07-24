@@ -1,0 +1,2 @@
+{"timestamp":"2025-06-10T09:40:01Z","phone":5550000068,"sender_type":"agent","content":"Hello! This is the AI receptionist at XYZ Home Services. How can I assist you today with plumbing, electrical, or HVAC services? Could you please tell me your name?","actions":[],"status":"active","reason":null,"job_type":null,"urgency":1,"operator_id":null}
+{"timestamp":"2025-06-10T09:40:10Z","phone":5550000068,"sender_type":"customer","content":"STOP","actions":[],"status":"do_not_contact","reason":"Customer requested no further contact","job_type":null,"urgency":1,"operator_id":null}

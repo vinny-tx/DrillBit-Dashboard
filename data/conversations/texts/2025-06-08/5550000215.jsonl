@@ -1,0 +1,2 @@
+{"timestamp":"2025-06-08T10:39:34Z","phone":5550000215,"sender_type":"agent","content":"Hello! This is XYZ Home Services. How can I assist you today with plumbing, electrical, or HVAC needs?","actions":[],"status":"active","reason":null,"job_type":null,"urgency":1,"operator_id":null}
+{"timestamp":"2025-06-08T10:39:45Z","phone":5550000215,"sender_type":"customer","content":"STOP","actions":[],"status":"do_not_contact","reason":"Customer requested no further contact","job_type":null,"urgency":1,"operator_id":null}
