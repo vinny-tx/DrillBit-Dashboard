@@ -62,17 +62,36 @@ A modern dashboard app built to track and visualize messages requiring attention
 ## 🗂 Project Structure
 
 ```
-/src
-  /app
-    /dashboard          # UI & logic for dashboard page
-    /api/messages       # API route to fetch messages
-  /components/ui        # Shared UI components (Badge, Card, etc.)
-  /lib                  # Helper functions and formatting
-  /types                # Type definitions (e.g., Message)
-prisma/
-  schema.prisma         # DB schema
-  seed.ts               # Optional seed script
+drillbit-dashboard/
+├── .env                         # Local environment variables (ignored by git)
+├── .gitignore
+├── README.md
+├── package.json
+├── tsconfig.json
+├── next.config.js
+├── prisma/
+│   ├── schema.prisma            # Prisma schema with model definitions
+│   └── seed.ts                  # Script to seed database
+├── lib/
+│   └── utils.ts                 # Utility functions (e.g., cn)
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx           # Root layout
+│   │   ├── page.tsx             # Home route
+│   │   ├── dashboard/
+│   │   │   └── page.tsx         # Dashboard page
+│   │   ├── customer/
+│   │   │   └── [phone]/
+│   │   │       └── page.tsx     # Customer detail view
+│   │   └── api/
+│   │       └── messages/
+│   │           ├── route.ts     # GET all messages
+│   │           └── [phone]/
+│   │               └── route.ts # GET messages for specific phone
+│   └── types/
+│       └── index.ts             # Shared TypeScript types (e.g., Message)
 ```
+
 
 ---
 
