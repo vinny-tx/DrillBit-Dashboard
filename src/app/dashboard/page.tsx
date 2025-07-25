@@ -150,8 +150,8 @@ export default function Dashboard() {
 
               className="text-sm border border-input rounded-md px-2 py-1 bg-background"
             >
-              <option value="urgency_desc_oldest">Urgency (High → Low) + Oldest</option>
-              <option value="urgency_desc_newest">Urgency (High → Low) + Newest</option>
+              <option value="urgency-desc-oldest">Urgency (High → Low) + Oldest</option>
+              <option value="urgency-desc-newest">Urgency (High → Low) + Newest</option>
               <option value="oldest">Oldest First</option>
               <option value="newest">Newest First</option>
             </select>

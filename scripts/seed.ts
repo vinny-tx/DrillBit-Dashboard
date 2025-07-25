@@ -31,7 +31,7 @@ async function loadMessages() {
 
         for await (const line of rl) {
           try {
-            const cleanLine = line.replace(/,(?=\s*?[\}\]])/, ''); // trailing comma fix
+            const cleanLine = line.replace(/,(?=\s*?[\}\]])/, '');
             const parsed = JSON.parse(cleanLine);
 
             const rawTimestamp = parsed.timestamp;
@@ -67,10 +67,23 @@ async function loadMessages() {
   }
 
   console.log(`📥 Inserting ${messages.length} messages...`);
-  for (const msg of messages) {
-    await prisma.message.create({ data: msg });
+
+  const BATCH_SIZE = 500;
+  for (let i = 0; i < messages.length; i += BATCH_SIZE) {
+    const batch = messages.slice(i, i + BATCH_SIZE);
+
+    try {
+      await prisma.message.createMany({
+        data: batch,
+        skipDuplicates: false, // You can set to true if schema has unique constraint
+      });
+      console.log(`✅ Inserted batch ${i / BATCH_SIZE + 1}`);
+    } catch (err) {
+      console.warn(`❌ Failed batch ${i / BATCH_SIZE + 1}:`, err);
+    }
   }
-  console.log('✅ Done.');
+
+  console.log('✅ Seeding complete.');
 }
 
 loadMessages()
