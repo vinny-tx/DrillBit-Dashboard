@@ -36,6 +36,7 @@ A modern dashboard app built to track and visualize messages requiring attention
 
    ```env
    DATABASE_URL="postgresql://user:password@localhost:5432/your-db"
+   DIRECT_URL=""
    ```
 
 4. **Push Prisma Schema**
