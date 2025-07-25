@@ -6,13 +6,8 @@ import Link from 'next/link';
 import { Message } from '@/types';
 
 export default function CustomerPage() {
-  const params = useParams();
-
-  if (!params || typeof params.phone !== 'string') {
-    return <div className="p-6">Invalid phone number</div>;
-  }
-
-  const phone = params.phone;
+  const params = useParams() as { phone?: string };
+  const phone = typeof params.phone === 'string' ? params.phone : null;
   const [messages, setMessages] = useState<Message[]>([]);
 
   useEffect(() => {
@@ -48,6 +43,10 @@ export default function CustomerPage() {
         return 'bg-gray-100 border-gray-300';
     }
   };
+
+  if (!phone) {
+    return <div className="p-6">Invalid phone number</div>;
+  }
 
   return (
     <main className="p-6 space-y-4">

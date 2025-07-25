@@ -5,7 +5,7 @@ export type Message = {
   senderType: string;
   operatorId?: string;
   content: string;
-  actions: any;
+  actions: Record<string, unknown>; 
   status?: string;
   reason?: string;
   jobType?: string;
