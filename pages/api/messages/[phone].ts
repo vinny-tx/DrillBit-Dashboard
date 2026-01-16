@@ -84,7 +84,7 @@ function normalizeTimestamp(raw: unknown): string | null {
   return clean; // keep as ISO string for API payload
 }
 
-function safeParseJsonLine(line: string): any | null {
+function safeParseJsonLine(line: string): RawMessageLine | null {
   const trimmed = line.trim();
   if (!trimmed) return null;
 
